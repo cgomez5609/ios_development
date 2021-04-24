@@ -1,0 +1,1 @@
+This repo was made to practice iOS development by following tutorials. However, certain sections were changed for practice, such as not relying on Xcode’s storyboard and developing custom UI.
