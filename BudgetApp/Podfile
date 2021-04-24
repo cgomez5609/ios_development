@@ -1,0 +1,7 @@
+
+target 'BudgetApp' do
+  use_frameworks!
+
+  pod 'Charts'
+	
+end

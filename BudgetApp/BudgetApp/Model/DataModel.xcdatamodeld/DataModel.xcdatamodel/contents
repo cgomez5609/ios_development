@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="20D91" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Account" representedClassName="Account" syncable="YES">
+        <attribute name="amount" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="parentUser" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="account" inverseEntity="User"/>
+        <relationship name="purchase" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Purchases" inverseName="parentAccount" inverseEntity="Purchases"/>
+    </entity>
+    <entity name="Purchases" representedClassName="Purchases" syncable="YES">
+        <attribute name="company" optional="YES" attributeType="String"/>
+        <attribute name="purchaseAmount" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="parentAccount" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Account" inverseName="purchase" inverseEntity="Account"/>
+    </entity>
+    <entity name="User" representedClassName="User" syncable="YES">
+        <attribute name="password" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="username" optional="YES" attributeType="String"/>
+        <relationship name="account" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Account" inverseName="parentUser" inverseEntity="Account"/>
+    </entity>
+    <elements>
+        <element name="Account" positionX="-181.34326171875" positionY="81.90292358398438" width="128" height="88"/>
+        <element name="Purchases" positionX="-196.9349365234375" positionY="305.2223510742188" width="136.631103515625" height="88"/>
+        <element name="User" positionX="-659.4039916992188" positionY="51.35775756835938" width="128" height="88"/>
+    </elements>
+</model>
